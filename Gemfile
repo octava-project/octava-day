@@ -8,6 +8,17 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 
+# Trailblazer
+gem 'trailblazer'
+gem 'reform-rails'
+gem 'trailblazer-rails'
+gem 'trailblazer-cells'
+gem 'cells-erb'
+gem 'cells-rails'
+gem 'kaminari-cells'
+gem 'roar', github: 'apotonick/roar'
+gem 'roar-rails', github: 'alaibe/roar-rails'
+
 group :development, :test do
   gem 'parallel_tests'
   gem 'pry-rails'
