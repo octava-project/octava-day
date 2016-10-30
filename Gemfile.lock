@@ -1,3 +1,22 @@
+GIT
+  remote: git://github.com/alaibe/roar-rails.git
+  revision: 1410278388bfcebebb5a852a784612074dbafbac
+  specs:
+    roar-rails (1.0.1)
+      actionpack
+      railties (>= 3.0.0)
+      responders
+      roar (>= 1.0.0, <= 1.1.0)
+      test_xml (>= 0.1.6)
+      uber (>= 0.0.5)
+
+GIT
+  remote: git://github.com/apotonick/roar.git
+  revision: 5d3c2f15552b09a6b5b01ab87a6ba6df3c16e744
+  specs:
+    roar (1.0.3)
+      representable (>= 2.4.0, < 3.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -38,20 +57,39 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    ansi (1.5.0)
     arel (7.1.4)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     builder (3.2.2)
     byebug (9.0.6)
-    coffee-rails (4.2.1)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.2.x)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.10.0)
+    cells (4.1.3)
+      tilt (>= 1.4, < 3)
+      uber (>= 0.0.9)
+    cells-erb (0.0.9)
+      cells (~> 4.0)
+      erbse (>= 0.0.2, < 0.1.0)
+    cells-rails (0.0.6)
+      actionpack (>= 3.0)
+      cells (>= 4.1)
+    coderay (1.1.1)
     concurrent-ruby (1.0.2)
+    database_cleaner (1.5.1)
     debug_inspector (0.0.2)
+    declarative (0.0.8)
+      uber (>= 0.0.15)
+    diffy (3.1.0)
+    disposable (0.3.2)
+      declarative (>= 0.0.8, < 1.0.0)
+      representable (>= 2.4.0, <= 3.1.0)
+      uber
+    erbse (0.0.2)
     erubis (2.7.0)
     execjs (2.7.0)
+    faker (1.6.3)
+      i18n (~> 0.5)
     ffi (1.9.14)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -63,6 +101,14 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    json (1.8.3)
+    json_expressions (0.8.3)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    kaminari-cells (0.0.4)
+      cells (>= 4.0.0, <= 5.0.0)
+      kaminari (>= 0.16.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -76,13 +122,37 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
+    minitest-reporters (1.1.8)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
+    minitest-spec-rails (5.3.0)
+      minitest (~> 5.0)
+      rails (>= 4.1)
     multi_json (1.12.1)
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
+    parallel (1.8.0)
+    parallel_tests (2.5.0)
+      parallel
     pg (0.19.0)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.4.0)
+      byebug (~> 9.0)
+      pry (~> 0.10)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     puma (3.6.0)
     rack (2.0.1)
+    rack-minitest (0.0.10)
+      json
+      minitest (~> 5.0)
+      rack-test
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0.1)
@@ -112,6 +182,19 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    reform (2.2.1)
+      disposable (>= 0.3.0, < 0.4.0)
+      representable (>= 2.4.0, < 3.1.0)
+      uber (~> 0.0.11)
+    reform-rails (0.1.7)
+      activemodel (>= 3.2)
+      reform (>= 2.2.0)
+    representable (3.0.0)
+      declarative (~> 0.0.5)
+      uber (~> 0.0.15)
+    responders (2.3.0)
+      railties (>= 4.2.0, < 5.1)
+    ruby-progressbar (1.7.5)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -119,6 +202,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    slop (3.6.0)
     spring (2.0.0)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -131,14 +215,26 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    test_xml (0.1.7)
+      diffy (~> 3.0)
+      nokogiri (>= 1.3.2)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
-    turbolinks (5.0.1)
-      turbolinks-source (~> 5)
-    turbolinks-source (5.0.0)
+    trailblazer (1.1.1)
+      declarative
+      reform (>= 2.0.0, < 3.0.0)
+      uber (>= 0.0.15)
+    trailblazer-cells (0.0.3)
+      cells (>= 4.1.0.rc1, < 5.0.0)
+    trailblazer-loader (0.1.0)
+    trailblazer-rails (0.3.2)
+      reform-rails (>= 0.1.4)
+      trailblazer (>= 1.0.4)
+      trailblazer-loader (>= 0.0.7)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uber (0.0.15)
     uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
     web-console (3.4.0)
@@ -154,18 +250,34 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug
-  coffee-rails (~> 4.2)
+  better_errors
+  cells-erb
+  cells-rails
+  database_cleaner
+  faker
   jbuilder (~> 2.5)
   jquery-rails
+  json_expressions
+  kaminari-cells
   listen (~> 3.0.5)
+  minitest-reporters
+  minitest-spec-rails
+  parallel_tests
   pg (~> 0.18)
+  pry-byebug
+  pry-rails
   puma (~> 3.0)
+  rack-minitest
   rails (~> 5.0.0, >= 5.0.0.1)
+  reform-rails
+  roar!
+  roar-rails!
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
-  turbolinks (~> 5)
+  trailblazer
+  trailblazer-cells
+  trailblazer-rails
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console
